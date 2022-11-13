@@ -3,6 +3,18 @@
   --accent: #0E522D; /* setting accent color */
 }
 
+html, body {
+  min-height: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .homeWrapper {
   position: relative;
   height: 100vh;
@@ -47,8 +59,8 @@
   gap: 10px;
 }
 
-.smallNav:first-child {
-  width: 8%;
+#qm {
+  width: 9%;
 }
 
 .smallNav > img {
@@ -56,7 +68,7 @@
 }
 
 .name {
-display: flex;
+  display: flex;
   text-align: left;
   align-items: left;
   flex-direction: column;
@@ -90,7 +102,7 @@ display: flex;
 }
 
 .hero {
-  height: 100vh;
+  height: 50%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -101,4 +113,29 @@ display: flex;
   position: absolute;
   width: 50%;
   top: 0;
+  left: -25%;
+}
+
+@media screen and (min-width: 1024px) {
+
+  .blobWrapper > svg {
+    margin-left: -50%;
+    margin-top: 10vh;
+    overflow: hidden;
+    scale: 2;
+  }
+
+  .hero > img {
+    width: 40%;
+    left: 50%;
+    top: -430px;
+  }
+
+  .smallNav > img {
+    width: 3%;
+  }
+
+  #qm {
+    width: 4%;
+  }
 }
