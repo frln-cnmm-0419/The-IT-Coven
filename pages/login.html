@@ -12,7 +12,27 @@
 </head>
   <body>
     <div class="wrapper">
-      
+      <div class="text">
+          <h1>TUHOG-TUSOK ONLINE</h1>
+          <h6>Please Login to continue</h6>
+      </div>
+      <div class="form">
+          <div class="inputs">
+            <input type="text" placeholder="Email" name="email" id="email">
+            <input type="password" placeholder="Password" name="password" id="password">
+            <button id="signin">Log In</button>
+          </div>
+          <div class="noAcc">
+            <h3>No account?</h3>
+            <a href="sign-up.html">Sign Up</a>
+          </div>
+          <div class="thrdPart">
+            <button><img src="../assets/google.png" alt="google-sign-in">Sign In with Google</button>
+            <button><img src="../assets/facebook.png" alt="facebook-sign-in">Sign In with Facebook</button>
+            <button><img src="../assets/apple.png" alt="apple-sign-in">Sign In with Apple</button>
+          </div>
+      </div>
     </div>
+    <script type="module" src="../script/authenticate.js"></script>
   </body>
 </html>

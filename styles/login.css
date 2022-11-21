@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap'); /* importing fonts from google cdn */
+
+:root {
+  --theme: #f4a900; /* setting theme color */
+  --accent: #0E522D; /* setting accent color */
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.wrapper {
+  width: 90%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  height: 10vh;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.noAcc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.noAcc > a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  gap: 10px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.inputs > input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid var(--theme);
+  border-radius: 15px;
+}
+
+.inputs > button {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid var(--theme);
+  border-radius: 15px;
+}
+
+.thrdPart {
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  width: 100%;  
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.thrdPart > button {  
+  border-radius: 20px;
+  display: flex;
+  border: 2px solid var(--theme);
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  width: 70%;
+}
+
+.thrdPart > button >img {  
+  width: 10%;
+}
