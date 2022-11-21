@@ -108,3 +108,52 @@ body {
 .thrdPart > button >img {  
   width: 10%;
 }
+
+@media screen and (min-width: 1024px  ) {
+  .wrapper {
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text {
+    height: 50vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inputs > input {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  .text > h1 {
+    font-size: 3rem;
+  }
+
+  .text > h6 {
+    font-size: 1.5rem;
+  }
+
+  .inputs > button {
+    font-size: 1.5rem;
+    width: 50%;
+    font-weight: bold;
+  }
+
+  .thrdPart > button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 50%;
+  }
+
+  .thrdPart > button > img {
+    width: 5%;
+  }
+}
