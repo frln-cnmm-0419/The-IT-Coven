@@ -70,7 +70,15 @@ $('#signin').click(() => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      alert(errorMessage);x
+      console.log(errorMessage);
+      if(errorMessage == "Firebase: Error (auth/invalid-email)."){
+        $("#error-modal").css("display", "flex");
+        $("#error-modal-text").text("Invalid Email");
+      }
+      else if(errorMessage == "Firebase: Error (auth/user-not-found).") {
+        $("#error-modal").css("display", "flex");
+        $("#error-modal-text").text("Username Not Found, Please Sign Up");
+      }
     });
 });
 
@@ -83,7 +91,7 @@ $('#google-login').click(() => {
     // The signed-in user info.
     const user = result.user;
     // ...
-    alert(userr.displayName);
+    alert(user.displayName);
   }).catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
@@ -97,12 +105,18 @@ $('#google-login').click(() => {
   });
 });
 
+$("#email, #password").keyup(() => {
+  if (($("#email").val() != "") && ($("#password").val() != "")) {
+    $("#signin").prop("disabled", false);
+  } else {
+    $("#signin").prop("disabled", true);
+  }
+})
+
 $("#close, #error-modal-button").click(() => {
   $("#error-modal").css("display", "none");
 });
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    errormodal.style.display = "none";
-  }
-}
+$("#error-modal").click( (e) => {
+  $("#error-modal").css("display", "none");
+});

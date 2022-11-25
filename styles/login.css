@@ -22,10 +22,14 @@ body {
   height: 100vh;
 }
 
+#signin:disabled {
+  cursor: not-allowed;
+  background-color: grey;
+}
+
 #error-modal {
-  /* display: flex; */
+  display: none;
   transition: all 250ms ease-in-out;
-  display: flex;
   z-index: 999;
   justify-content: center;
   align-items: center;
