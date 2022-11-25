@@ -1,14 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap'); /* importing fonts from google cdn */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"); /* importing fonts from google cdn */
 
 :root {
   --theme: #f4a900; /* setting theme color */
-  --accent: #0E522D; /* setting accent color */
+  --accent: #0e522d; /* setting accent color */
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
 
@@ -24,7 +26,7 @@ body {
   width: 90%;
   height: 100vh;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -56,7 +58,7 @@ body {
   height: 50vh;
   flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   gap: 10px;
 }
 
@@ -79,7 +81,8 @@ body {
 .inputs > button {
   width: 70%;
   padding: 10px;
-  border: 1px solid var(--theme);
+  border: none;
+  background-color: var(--theme);
   border-radius: 15px;
 }
 
@@ -87,13 +90,13 @@ body {
   display: flex;
   flex-direction: column;
   height: 30vh;
-  width: 100%;  
+  width: 100%;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
 
-.thrdPart > button {  
+.thrdPart > button {
   border-radius: 20px;
   display: flex;
   border: 2px solid var(--theme);
@@ -105,16 +108,16 @@ body {
   width: 70%;
 }
 
-.thrdPart > button >img {  
+.thrdPart > button > img {
   width: 10%;
 }
 
-@media screen and (min-width: 1024px  ) {
+@media screen and (min-width: 1024px) {
   .wrapper {
     width: 90%;
     height: 100vh;
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: center;
     align-items: center;
   }
