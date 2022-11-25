@@ -23,7 +23,7 @@ body {
 }
 
 #error-modal {
-  display: flex;
+  /* display: flex; */
   transition: all 250ms ease-in-out;
   display: flex;
   z-index: 999;
