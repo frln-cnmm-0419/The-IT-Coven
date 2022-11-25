@@ -22,6 +22,67 @@ body {
   height: 100vh;
 }
 
+#error-modal {
+  display: flex;
+  transition: all 250ms ease-in-out;
+  display: flex;
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+}
+
+.error-modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  background: white;
+  border: 1px solid var(--theme);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.error-modal-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.error-modal-header > button {
+  border: none;
+  cursor: pointer;
+  background-color: none;
+  cursor: pointer;
+}
+
+.error-modal-body {
+  padding: 1.5rem;
+}
+
+.error-modal-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.error-modal-footer > button {
+  padding: 1rem;
+  background: var(--theme);
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
 .wrapper {
   width: 90%;
   height: 100vh;
@@ -31,13 +92,16 @@ body {
   align-items: center;
 }
 
-.text {
-  height: 10vh;
-  width: 90%;
+.aside {
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.aside > img {
+  width: 100%;
 }
 
 .noAcc {
@@ -80,12 +144,34 @@ body {
 
 .inputs > button {
   width: 70%;
+  overflow: hidden;
+  position: relative;
+  transition: background 400ms;
+  color: #fff;
+  background-color: var(--theme);
+  outline: 0;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  cursor: pointer;
   padding: 10px;
   border: none;
   background-color: var(--theme);
   border-radius: 15px;
 }
 
+span.ripple {
+  position: absolute; /* The absolute position we mentioned earlier */
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
 .thrdPart {
   display: flex;
   flex-direction: column;

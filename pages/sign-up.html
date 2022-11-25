@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/../styles/signup.css">
-  <title>Sign Up</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
-    integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/../styles/signup.css" />
+    <title>Sign Up</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
   <body>
     <div class="container">
       <div class="signupWrapper">
-    
         <div class="comp-desc">
-          <div class='desc'>
-            <h1>TUHOG TUSOK</h1>
-            <h6>Masarap pati Stick</h6>
-          </div>
-          <div class="sub-desc">
-            <h5>Please Sign Up to Continue</h5>
-          </div>
+          <img
+            src="../assets/sign-up-banner.png"
+            alt="sign-up-banner"
+            oncontextmenu="return false"
+          />
         </div>
-    
+
         <div class="inputArea">
           <div id="form-field" class="formArea">
             <input type="text" id="nickname" placeholder="Nickname" />
@@ -31,16 +31,20 @@
             <input placeholder="Password" id="password" type="password" />
             <button class="signup">Sign Up</button>
           </div>
-    
+
           <div class="noAccount">
             <h3>Already have an Account?</h3>
             <a href="login.html" class="toLi">Log In</a>
 
-            <button><img src="../assets/google.png" alt="google-sign-in">Sign In with Google</button>
+            <button>
+              <img src="../assets/google.png" alt="google-sign-in" />Sign In
+              with Google
+            </button>
           </div>
         </div>
       </div>
     </div>
+    <script src="../script/index.js"></script>
     <script type="module" src="../script/authenticate.js"></script>
   </body>
 </html>

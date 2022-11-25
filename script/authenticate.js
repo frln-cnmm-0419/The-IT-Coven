@@ -1,3 +1,6 @@
+const errormodal = document.getElementById("error-modal");
+const closemodal = document.getElementById("close");
+const okbtnmodal = document.getElementById("error-modal-button");
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
@@ -39,6 +42,7 @@ createUserWithEmailAndPassword(auth, email, password)
       email: email,
     });
     alert("Account Created");
+    window.location.href = "products.html";
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -66,7 +70,7 @@ $('#signin').click(() => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      alert(errorMessage);
+      alert(errorMessage);x
     });
 });
 
@@ -92,3 +96,13 @@ $('#google-login').click(() => {
     alert(errorMessage);
   });
 });
+
+$("#close, #error-modal-button").click(() => {
+  $("#error-modal").css("display", "none");
+});
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    errormodal.style.display = "none";
+  }
+}

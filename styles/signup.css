@@ -1,24 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap'); /* importing fonts from google cdn */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"); /* importing fonts from google cdn */
 
 :root {
   --theme: #f4a900; /* setting theme color */
-  --accent: #0E522D; /* setting accent color */
+  --accent: #0e522d; /* setting accent color */
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 .signupWrapper {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-	width: 100%;
-	justify-content: center;
-	align-items: center;
-	gap: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
   position: relative;
 }
 
@@ -32,43 +34,37 @@
 }
 
 .comp-desc {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-direction: column;
+  width: 35%;
 }
 
-.desc {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  align-items: center;
-  justify-content: center;
+.comp-desc > img {
+  width: 100%;
 }
 
 .formArea {
-		display: flex;
-		flex-direction: column;
-		gap: 10px;
-		width: 80%;
-		justify-content: center;
-		align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
 }
 
 .formArea > input {
   width: 100%;
   height: 40px;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 15px;
+  border: 1px solid var(--theme);
   padding: 10px;
   font-size: 1rem;
+  font-weight: 700;
 }
 
-.submit {
+.signup {
   background: var(--theme);
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
   color: #fff;
   font-size: 1rem;
   width: 70%;
@@ -76,33 +72,32 @@
 }
 
 .noAccount {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		gap: 15px;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .noAccount > button {
-    border: 2px solid var(--accent);
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 1rem;
-    padding: 10px;
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+  border: 2px solid var(--theme);
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 10px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .toLi {
-    color: var(--accent);
+  color: var(--accent);
 }
 
 .noAccount > button > img {
-    width: 20px;
+  width: 20px;
 }
 
 .noAccount > h3 {
@@ -113,17 +108,17 @@
   width: 100%;
   position: absolute;
   z-index: 999;
-  top:0px;
-  left:0px;
-  bottom:0px;
-  right:0px;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
   height: 100vh;
 }
 
 .container {
-	position: relative;
-	width: 100%;
-	height: 100vh;
+  position: relative;
+  width: 100%;
+  height: 100vh;
 }
 
 @media screen and (min-width: 1024px) {
@@ -138,14 +133,14 @@
   .signupWrapper {
     flex-direction: row;
     gap: 50px;
-  } 
+  }
 
   .inputArea {
     width: 50%;
   }
 
   .noAccount {
-    width: 100%
+    width: 100%;
   }
 
   .noAccount > button {
