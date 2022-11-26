@@ -70,7 +70,7 @@ $('#signup').click(() => {
 					name: name,
 					email: email,
 				});
-				$("#modal-note").text("Account Creation Successful!");
+				$("#modal-note").text("Account Creation Successful! Click OK to go to the sign in page.");
 				$("#modal").css("display", "flex");
 				$("#close-modal-btn").click(() => {
 					location.href = "login.html";
@@ -105,7 +105,7 @@ $('#signin').click(() => {
 			update(ref(database, 'users/' + user.uid), {
 				lastLogin: dt,
 			})
-			$("#error-modal-text").text("Login Successful");
+			$("#error-modal-text").text("Login Successful! Press OK to continue.");
 			$("#error-modal").css("display", "flex");
 			$("#error-modal-button").click(() => {
 				location.href = "products.html";
@@ -128,7 +128,7 @@ $('#signin').click(() => {
 });
 
 // google login button
-$('#google-login').click(() => {
+$('#google-login, #google-sign-up').click(() => {
 	signInWithPopup(auth, providerGoogle)
 		.then((result) => {
 			// This gives you a Google Access Token. You can use it to access the Google API.
@@ -138,6 +138,8 @@ $('#google-login').click(() => {
 			const userName = result.user;
 			// ...
 			alert(userName.displayName);
+			$("#modal-note").text("Success!.");
+			$("#modal").css("display", "flex");
 		}).catch((error) => {
 			// Handle Errors here.
 			const errorCode = error.code;
@@ -150,7 +152,10 @@ $('#google-login').click(() => {
 			// error handling if the user close the window during sign in
 			if (errorMessage == "Firebase: Error (auth/popup-closed-by-user).") {
 				$("#error-modal").css("display", "flex");
-				$("#error-modal-text").text("Login Cancelled");
+				$("#error-modal-text").text("Login Cancelled.");
+
+				$("#modal-note").text("Opps, the user closed the pop-up window please try again.");
+				$("#modal").css("display", "flex");
 			}
 		})
 });
