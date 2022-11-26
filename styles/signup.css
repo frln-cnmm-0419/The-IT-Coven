@@ -13,6 +13,12 @@
   box-sizing: border-box;
 }
 
+body {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+
 .signupWrapper {
   display: flex;
   flex-direction: column;
@@ -51,6 +57,7 @@
 }
 
 .formArea > input {
+  transition: all 500ms ease-in-out;
   width: 100%;
   height: 40px;
   border: 1px solid #ccc;
@@ -61,14 +68,27 @@
   font-weight: 700;
 }
 
-.signup {
+#signup {
   background: var(--theme);
   border: none;
+  cursor: pointer;
+  border: 2px solid var(--theme);
   border-radius: 20px;
   color: #fff;
   font-size: 1rem;
+  transition: all 250ms ease-in-out;
   width: 70%;
   padding: 10px;
+}
+
+#signup:hover {
+  background: none;
+  color: black;
+}
+
+#signup:disabled {
+  cursor: not-allowed;
+  background-color: grey;
 }
 
 .noAccount {
@@ -90,14 +110,31 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+  transition: 250ms all ease-in-out;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 
 .toLi {
   color: var(--accent);
+  text-decoration: none;
+}
+
+.toLi:hover {
+  text-decoration: underline;
 }
 
 .noAccount > button > img {
   width: 20px;
+}
+
+.noAccount > button {
+  cursor: pointer;
+}
+
+.noAccount > button:hover {
+  background-color: var(--theme);
 }
 
 .noAccount > h3 {
@@ -115,10 +152,75 @@
   height: 100vh;
 }
 
-.container {
-  position: relative;
+.fp {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#show-pass,
+.fp > p {
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+#modal {
+  position: fixed;
+  z-index: 999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
   height: 100vh;
+}
+
+#modal > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  background: white;
+  border: 1px solid var(--theme);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+#modal-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#button-close {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#button-close > button {
+  border-radius: 15px;
+  padding: 1.2rem;
+  border: none;
+  background-color: var(--theme);
+}
+
+#modal-container {
+  width: 30%;
+}
+
+#modal-content {
+  padding: 1rem;
 }
 
 @media screen and (min-width: 1024px) {

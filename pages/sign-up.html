@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/../styles/signup.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
     <title>Sign Up</title>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
@@ -14,33 +18,47 @@
     ></script>
   </head>
   <body>
-    <div class="container">
-      <div class="signupWrapper">
-        <div class="comp-desc">
-          <img
-            src="../assets/sign-up-banner.png"
-            alt="sign-up-banner"
-            oncontextmenu="return false"
-          />
+    <div id="modal">
+      <div id="modal-container">
+        <div id="modal-head">
+          <h1>Notice</h1>
+        </div>
+        <div id="modal-content">
+          <p id="modal-note"></p>
+        </div>
+        <div id="button-close">
+          <button id="close-modal-btn">OK</button>
+        </div>
+      </div>
+    </div>
+    <div class="signupWrapper">
+      <div class="comp-desc">
+        <img
+          src="../assets/sign-up-banner.png"
+          alt="sign-up-banner"
+          oncontextmenu="return false"
+        />
+      </div>
+
+      <div class="inputArea">
+        <div id="form-field" class="formArea">
+          <input type="text" id="nickname" placeholder="Nickname" />
+          <input placeholder="Email" id="email" type="email" />
+          <input placeholder="Password" id="password" type="password" />
+          <div class="fp">
+            <input type="checkbox" name="" id="show-pass" />
+            <p>Show Password</p>
+          </div>
+          <button disabled id="signup">Sign Up</button>
         </div>
 
-        <div class="inputArea">
-          <div id="form-field" class="formArea">
-            <input type="text" id="nickname" placeholder="Nickname" />
-            <input placeholder="Email" id="email" type="email" />
-            <input placeholder="Password" id="password" type="password" />
-            <button class="signup">Sign Up</button>
-          </div>
-
-          <div class="noAccount">
-            <h3>Already have an Account?</h3>
-            <a href="login.html" class="toLi">Log In</a>
-
-            <button>
-              <img src="../assets/google.png" alt="google-sign-in" />Sign In
-              with Google
-            </button>
-          </div>
+        <div class="noAccount">
+          <h3>Already have an Account?</h3>
+          <a href="login.html" class="toLi">Log In</a>
+          <button>
+            <img src="../assets/google.png" alt="google-sign-in" />Sign In with
+            Google
+          </button>
         </div>
       </div>
     </div>

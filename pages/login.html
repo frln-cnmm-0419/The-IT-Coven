@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log In</title>
     <link rel="stylesheet" href="../styles/login.css" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
-      rel="stylesheet"
-    />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
       integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
@@ -21,10 +17,7 @@
     <div id="error-modal">
       <div class="error-modal-content">
         <div class="error-modal-header">
-          <h2>Error</h2>
-          <button>
-            <span id="close" class="material-icons-round"> highlight_off </span>
-          </button>
+          <h2>Notice</h2>
         </div>
         <div class="error-modal-body">
           <p id="error-modal-text"></p>
@@ -41,13 +34,17 @@
       </div>
       <div class="form">
         <div class="inputs">
-          <input type="text" placeholder="Email" name="email" id="email" />
+          <input type="text" placeholder="Email" name="email" id="email-lg" />
           <input
             type="password"
             placeholder="Password"
             name="password"
-            id="password"
+            id="password-lg"
           />
+          <div class="fp-lg">
+            <input type="checkbox" name="" id="show-pass-lg" />
+            <p>Show Password</p>
+          </div>
           <button disabled id="signin">Log In</button>
         </div>
         <div class="noAcc">
