@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"); /* importing fonts from google cdn */
+
+*,
+*::before,
+*::after {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+}
+
+.heading {
+  background-color: #d6ede7;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-row-end: 2;
+  grid-column-end: 4;
+  background: #f4a900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+}
+
+.nav-container {
+  background: #0a5028;
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-row-end: 4;
+  grid-column-end: 2;
+  gap: 5rem;
+  display: flex;
+  height: 80vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-container > button {
+  cursor: pointer;
+  color: #800000;
+  background: #f4a900;
+  text-align: center;
+  border-radius: 15px;
+  padding: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 1.5rem;
+  transition: all 300ms ease-in-out;
+  font-weight: bold;
+}
+
+.nav-container > button:hover {
+  color: #fff;
+  background: #800000;
+}
+
+.main-nav {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-nav > button {
+  cursor: pointer;
+  color: #800000;
+  background: #f4a900;
+  border-radius: 15px;
+  padding: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 1.5rem;
+  transition: all 300ms ease-in-out;
+  font-weight: bold;
+}
+
+.main-nav > button:hover {
+  color: #fff;
+  background: #800000;
+}
+
+.main-container {
+  background-color: #c7dbad;
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-row-end: 4;
+  grid-column-end: 4;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.main-container > div {
+  background-color: #c7dbad;
+  display: flex;
+  width: 10rem;
+  height: 10rem;
+  flex-direction: column;
+  border: 2px solid #f43b16;
+  border-radius: 15px;
+  background: #f4a900;
+  transition: all 300ms ease-in-out;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  align-items: center;
+}
+
+.main-container > div:hover {
+  background-color: #f43b16;
+}
+
+.main-container > div > img {
+  width: 80%;
+  border-radius: 1rem;
+}
+
+.main-container > div > h1 {
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-direction: row;
+}
