@@ -25,8 +25,9 @@
   grid-column-end: 4;
   background: #f4a900;
   display: flex;
+  padding-left: 5%;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: 20vh;
 }
 
@@ -57,6 +58,22 @@
   font-size: 1.5rem;
   transition: all 300ms ease-in-out;
   font-weight: bold;
+  position: relative;
+}
+
+.nav-container > button > p {
+  position: absolute;
+  z-index: 10;
+  font-size: 1rem;
+  top: -5px;
+  right: -5px;
+  transition: all 3000ms ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
 }
 
 .nav-container > button:hover {
@@ -137,4 +154,73 @@
   align-items: center;
   gap: 2px;
   flex-direction: row;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #1a1a1a;
+  font-family: "Poppins", sans-serif !important;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 16px;
+  font-weight: 700;
+  position: fixed;
+  z-index: 20;
+  left: 50%;
+  top: 30px;
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
 }
