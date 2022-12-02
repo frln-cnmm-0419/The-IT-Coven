@@ -5,6 +5,10 @@
   --accent: #0e522d; /* setting accent color */
 }
 
+.exit {
+  cursor: pointer;
+}
+
 *,
 *::before,
 *::after {
@@ -196,68 +200,72 @@ span.ripple {
   -webkit-user-select: none;
 }
 
-#modal {
+#snackbar-for-signup {
+  visibility: hidden;
+  max-width: 80%;
+  background-color: #1a1a1a;
+  font-family: "Poppins", sans-serif !important;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 16px;
+  font-weight: 700;
   position: fixed;
-  z-index: 999;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(3px);
-  background-color: rgba(0, 0, 0, 0.3);
-  width: 100%;
-  height: 100vh;
+  z-index: 20;
+  justify-self: center;
+  top: 30px;
 }
 
-#modal > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
-  background: white;
-  border: 1px solid var(--theme);
-  border-radius: 20px;
-  padding: 2rem;
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar-for-signup.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-#modal-head {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 30px;
+    opacity: 1;
+  }
 }
 
-#button-close {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 30px;
+    opacity: 1;
+  }
 }
 
-#button-close > button {
-  border-radius: 15px;
-  padding: 1.2rem 3rem;
-  border: 2px solid var(--theme);
-  cursor: pointer;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
-  outline: none;
-  overflow: hidden;
-  -webkit-tap-highlight-color: transparent;
-  position: relative;
-  transition: all 400ms ease-in-out;
+@-webkit-keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
 }
 
-#button-close > button:hover {
-  background-color: var(--theme);
-}
-
-#modal-container {
-  width: 30%;
-}
-
-#modal-content {
-  padding: 1rem;
+@keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    scale: 0;
+    opacity: 0;
+  }
 }
 
 @media screen and (min-width: 1024px) {

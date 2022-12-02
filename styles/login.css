@@ -5,6 +5,74 @@
   --accent: #0e522d; /* setting accent color */
 }
 
+#snackbar-lg {
+  visibility: hidden;
+  background-color: #1a1a1a;
+  font-family: "Poppins", sans-serif !important;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 80%;
+  font-weight: 700;
+  position: fixed;
+  z-index: 20;
+  justify-self: center;
+  top: 30px;
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar-lg.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    scale: 0;
+    opacity: 0;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -27,44 +95,6 @@ body {
   background-color: grey;
 }
 
-#error-modal {
-  display: none;
-  transition: all 500ms ease-in-out;
-  z-index: 999;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  overflow: auto;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(3px);
-}
-
-.error-modal-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
-  background: white;
-  border: 1px solid var(--theme);
-  border-radius: 20px;
-  padding: 2rem;
-}
-
-.error-modal-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.error-modal-header > h1 {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.5rem;
-}
-
 .fp-lg {
   display: flex;
   gap: 10px;
@@ -77,34 +107,6 @@ body {
 #show-pass,
 .fp > p {
   cursor: pointer;
-}
-
-.error-modal-header > button {
-  border: none;
-  cursor: pointer;
-  background-color: none;
-  cursor: pointer;
-}
-
-.error-modal-body {
-  padding: 1.5rem;
-  text-align: center;
-}
-
-.error-modal-footer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-}
-
-.error-modal-footer > button {
-  padding: 1rem;
-  background: var(--theme);
-  color: white;
-  border: none;
-  border-radius: 10px;
 }
 
 .wrapper {
