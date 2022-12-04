@@ -1,16 +1,61 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"); /* importing fonts from google cdn */
+@font-face {
+  font-family: "quiapo";
+  src: url("./../fonts/Quiapo_Free.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "arial";
+  src: url("./../fonts/arial.ttf") format("truetype");
+}
 
 *,
 *::before,
 *::after {
-  font-family: "Poppins", sans-serif;
+  font-family: "arial", sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+#cart-float {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 30;
+  height: 100vh;
+  backdrop-filter: blur(3px);
+}
+
+.cart-cont {
+  width: 40%;
+  padding: 3rem;
+  background: #f4a900;
+  border-radius: 1rem;
+  border: 2px solid #f43b16;
+}
+
+.cart-cont > .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.close-cart {
+  cursor: pointer;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+
 .wrapper {
   display: grid;
+  height: 100vh;
+  position: relative;
   grid-template-rows: 1fr 1fr 1fr;
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr;
@@ -18,7 +63,6 @@
 }
 
 .heading {
-  background-color: #d6ede7;
   grid-row-start: 1;
   grid-column-start: 1;
   grid-row-end: 2;
@@ -28,7 +72,11 @@
   padding-left: 5%;
   align-items: center;
   justify-content: flex-start;
-  height: 20vh;
+  height: 15vh;
+}
+
+.heading > h1 {
+  font-family: "quiapo", "Poppins", sans-serif !important;
 }
 
 .nav-container {
@@ -39,7 +87,7 @@
   grid-column-end: 2;
   gap: 5rem;
   display: flex;
-  height: 80vh;
+  height: 85vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -54,7 +102,6 @@
   padding: 1rem;
   padding-left: 3rem;
   padding-right: 3rem;
-  font-family: "Poppins", sans-serif !important;
   font-size: 1.5rem;
   transition: all 300ms ease-in-out;
   font-weight: bold;
@@ -78,7 +125,7 @@
 
 .nav-container > button:hover {
   color: #fff;
-  background: #800000;
+  background: #e03c0a;
 }
 
 .main-nav {
@@ -97,7 +144,6 @@
   padding: 1rem;
   padding-left: 3rem;
   padding-right: 3rem;
-  font-family: "Poppins", sans-serif !important;
   font-size: 1.5rem;
   transition: all 300ms ease-in-out;
   font-weight: bold;
@@ -105,11 +151,11 @@
 
 .main-nav > button:hover {
   color: #fff;
-  background: #800000;
+  background: #e03c0a;
 }
 
 .main-container {
-  background-color: #c7dbad;
+  background-color: #e8e4c7;
   grid-row-start: 2;
   grid-column-start: 2;
   grid-row-end: 4;
@@ -118,15 +164,17 @@
   flex-direction: row;
   gap: 2rem;
   padding: 2rem;
+  overflow-y: scroll;
   justify-content: center;
   flex-wrap: wrap;
+  height: 85vh;
 }
 
 .main-container > div {
   background-color: #c7dbad;
   display: flex;
-  width: 10rem;
-  height: 10rem;
+  width: 20rem;
+  height: 20rem;
   flex-direction: column;
   border: 2px solid #f43b16;
   border-radius: 15px;
@@ -220,7 +268,7 @@
     opacity: 1;
   }
   to {
-    top: 0;
+    scale: 0;
     opacity: 0;
   }
 }

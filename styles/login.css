@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"); /* importing fonts from google cdn */
+@font-face {
+  font-family: "arial";
+  src: url("./../fonts/arial.ttf") format("truetype");
+}
 
 :root {
   --theme: #f4a900; /* setting theme color */
@@ -8,7 +11,7 @@
 #snackbar-lg {
   visibility: hidden;
   background-color: #1a1a1a;
-  font-family: "Poppins", sans-serif !important;
+  font-family: "arial", sans-serif !important;
   color: #fff;
   text-align: center;
   border-radius: 10px;

@@ -3,7 +3,19 @@ $(document).ready(() => {
   var almusalLS = document.getElementsByClassName("almusal");
   var meryendaLS = document.getElementsByClassName("meryenda");
   var pulutanLS = document.getElementsByClassName("pulutan");
-  var sbpr = document.getElementById("snackbar");
+  const sbpr = document.getElementById("snackbar");
+  const paynowBTN = document.getElementsByClassName('pn-btn');
+  const cartCont = document.getElementById('cart-float');
+  const closebtn = document.getElementsByClassName('close-cart');
+
+  $(paynowBTN).click(() => {
+    $(cartCont).css("display", "flex");
+  });
+
+  $(cartCont, closebtn).click(e => {
+    $(cartCont).css("display", "none");
+  })
+
 
   var notif = (product) => {
     $(sbpr).text("SORTED TO " + product + " ONLY");
@@ -16,7 +28,7 @@ $(document).ready(() => {
     $(meryendaLS).css("display", "none");
     $(pulutanLS).css("display", "none");
     notif(targetSort);
-    targetSort == "ALMUSAL" ? $(almusalLS).css("display", "block") : targetSort == "MERYENDA" ? $(meryendaLS).css("display", "block") : $(pulutanLS).css("display", "block");
+    targetSort == "ALMUSAL" ? $(almusalLS).css("display", "flex") : targetSort == "MERYENDA" ? $(meryendaLS).css("display", "flex") : $(pulutanLS).css("display", "flex");
   }
 
   $(sortingbtn).click(e => {
