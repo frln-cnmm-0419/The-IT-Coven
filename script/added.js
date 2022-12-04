@@ -15,19 +15,8 @@ $(document).ready(() => {
     $(almusalLS).css("display", "none");
     $(meryendaLS).css("display", "none");
     $(pulutanLS).css("display", "none");
-
-    if (targetSort == "ALMUSAL") {
-      $(almusalLS).css("display", "flex");
-      notif(targetSort);
-    }
-    else if (targetSort == "MERYENDA") {
-      $(meryendaLS).css("display", "flex");
-      notif(targetSort);
-    }
-    else if (targetSort == "PULUTAN") {
-      $(pulutanLS).css("display", "flex");
-      notif(targetSort);
-    }
+    notif(targetSort);
+    targetSort == "ALMUSAL" ? $(almusalLS).css("display", "block") : targetSort == "MERYENDA" ? $(meryendaLS).css("display", "block") : $(pulutanLS).css("display", "block");
   }
 
   $(sortingbtn).click(e => {
