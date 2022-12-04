@@ -1,30 +1,41 @@
 $(document).ready(() => {
-  var price = 0;
-  var count = 0;
-  var product = document.getElementsByClassName("products");
-  var cartcount = document.getElementsByClassName("content");
-  var toast = document.getElementById("snackbar");
-  console.log(cartcount);
+  var sortingbtn = document.getElementsByClassName("sorting-btn");
+  var almusalLS = document.getElementsByClassName("almusal");
+  var meryendaLS = document.getElementsByClassName("meryenda");
+  var pulutanLS = document.getElementsByClassName("pulutan");
+  var sbpr = document.getElementById("snackbar");
 
-  $(product).click((e) => {
-    price += 100;
-    //console.log(price);
-    // Get the snackbar DIV
+  var notif = (product) => {
+    $(sbpr).text("SORTED TO " + product + " ONLY");
+    sbpr.className = "show";
+    setTimeout(() => { sbpr.className = sbpr.className.replace("show", ""); }, 3000);
+  }
 
-    // Add the "show" class to DIV
-    toast.innerText = "Added to Cart!";
-    toast.className = "show";
+  var sorting = (targetSort) => {
+    $(almusalLS).css("display", "none");
+    $(meryendaLS).css("display", "none");
+    $(pulutanLS).css("display", "none");
 
+    if (targetSort == "ALMUSAL") {
+      $(almusalLS).css("display", "flex");
+      notif(targetSort);
+    }
+    else if (targetSort == "MERYENDA") {
+      $(meryendaLS).css("display", "flex");
+      notif(targetSort);
+    }
+    else if (targetSort == "PULUTAN") {
+      $(pulutanLS).css("display", "flex");
+      notif(targetSort);
+    }
+  }
 
-
-    // After 3 seconds, remove the show class from DIV
-    setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
-
-    count++;
-    console.log(count);
-    cartcount[0].innerText = count;
-    $(e).css("scale", "1.2");
-    $(cartcount).css("width", "1.8rem");
-    $(cartcount).css("height", "1.8rem");
-  })
-});
+  $(sortingbtn).click(e => {
+    setTimeout(() => {
+      sorting(e.target.innerText);
+    }, 3500);
+    $(sbpr).text("SORTING...");
+    sbpr.className = "show";
+    setTimeout(() => { sbpr.className = sbpr.className.replace("show", ""); }, 3000);
+  });
+})
