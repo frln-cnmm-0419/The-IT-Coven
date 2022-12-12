@@ -11,8 +11,10 @@ $(document).ready(() => {
 	var product = document.getElementsByClassName("products");
 	const okbtnmodal = document.getElementById("error-modal-button");
 	const order = document.getElementById('order-now');
-	var isLoggedIn = "false";
 	var user;
+	const paynow = document.getElementsByClassName("pn-btn");
+	var arrOfProducts = [];
+	var arrOfProductsPrice = [];
 	// Your web app's Firebase configuration
 	const firebaseConfig = {
 		apiKey: "AIzaSyBfbXNMMl_LRaVqipBtRqGjAalDyyWXfRE",
@@ -32,7 +34,6 @@ $(document).ready(() => {
 
 	var cartcount = document.getElementsByClassName("content");
 	var toast = document.getElementById("snackbar");
-	var price = 0;
 	var count = 0;
 
 	// this is for the sign in form
@@ -90,7 +91,6 @@ $(document).ready(() => {
 					snackbarforsu.innerText = "Account Creation Successful! Redirecting to the sign in page...";
 					snackbarforsu.className = "show";
 					setTimeout(() => { snackbarforsu.className = snackbarforsu.className.replace("show", ""); }, 3000);
-					isLoggedIn = "true";
 					setTimeout(redirectToProductsPageSU, 3000);
 
 				})
@@ -139,9 +139,8 @@ $(document).ready(() => {
 				loginsb.innerText = "Login Successful! Redirecting to Tusok Tusok Products Page...";
 				loginsb.className = "show";
 				setTimeout(() => { loginsb.className = loginsb.className.replace("show", ""); }, 3000);
-				isLoggedIn = "true";
 				setTimeout(redirectToProductsPage, 3000);
-
+				sessionStorage.setItem("displayname", email);
 				// ...
 			})
 			.catch((error) => {
@@ -181,12 +180,11 @@ $(document).ready(() => {
 				const userName = result.user;
 				// ...
 				alert(userName.displayName);
-				isLoggedIn = "true";
 				user = userName.displayName;
 				$("#modal-note").text("Success!.");
 				$("#modal").css("display", "flex");
 				location.href = "products.html";
-				e.preventDefault();
+				sessionStorage.setItem("displayname", user);
 			}).catch((error) => {
 				// Handle Errors here.
 				const errorCode = error.code;
@@ -237,25 +235,97 @@ $(document).ready(() => {
 		$("#modal").css("display", "none");
 	});
 
+	var addToArrOfProducts = (target) => {
+		if (target == "bananacue") {
+			arrOfProducts.push("Banana Cue");
+		}
+		else if (target == "balot") {
+			arrOfProducts.push("Balot");
+		}
+		else if (target == "barbeque") {
+			arrOfProducts.push("Barbeque");
+		}
+		else if (target == "buchi") {
+			arrOfProducts.push("Buchi");
+		}
+		else if (target == "calamares") {
+			arrOfProducts.push("Calamares");
+		}
+		else if (target == "carioca") {
+			arrOfProducts.push("Carioca");
+		}
+		else if (target == "lumpianshanghai") {
+			arrOfProducts.push("Lumpia Shanghai");
+		}
+		else if (target == "potatoballs") {
+			arrOfProducts.push("Potato Balls");
+		}
+		else if (target == "sundot") {
+			arrOfProducts.push("Sundot");
+		}
+		else if (target == "siomai") {
+			arrOfProducts.push("Siomai");
+		}
+		else if (target == "taho") {
+			arrOfProducts.push("Taho");
+		}
+		else if (target == "takoyaki") {
+			arrOfProducts.push("Takoyaki");
+		}
+		else if (target == "fishball") {
+			arrOfProducts.push("Fishball");
+		}
+		else if (target == "kwekkwek") {
+			arrOfProducts.push("Kwek Kwek");
+		}
+		else if (target == "kikyam") {
+			arrOfProducts.push("Kikyam");
+		}
+		else if (target == "chickenskin") {
+			arrOfProducts.push("Chicken Skin");
+		}
+		else if (target == "corndog") {
+			arrOfProducts.push("Corn Dog");
+		}
+		else if (target == "dynamite") {
+			arrOfProducts.push("Dynamite");
+		}
+		console.log(target);
+	}
+
 	$(product).click((e) => {
+		var price;
 		price += 100;
 		// console.log(price);
 		// getting the snackbar DIV
-		if (isLoggedIn == "true") {
+		if (sessionStorage.getItem("displayname") != null) {
 			toast.innerText = "Added to Cart!";
 			toast.className = "show";
 			setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
 			count++;
-			console.log(count);
 			$(cartcount).text(count);
 			$(e).css("scale", "1.2");
 			$(cartcount).css("width", "1.8rem");
 			$(cartcount).css("height", "1.8rem");
+			console.log(e.target.id)
+			addToArrOfProducts(e.target.id);
+
 		}
 		else {
 			toast.innerText = "Please login to add to cart!";
 			toast.className = "show";
 			setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+		}
+	})
+	var list = document.getElementsByClassName("contentarea");
+	$(paynow).click(() => {
+		var i;
+		console.log(arrOfProducts);
+		for (i = 0; i < arrOfProducts.length; i++) {
+			// $(list).append("<li>" + arrOfProducts[i] + "</li>");
+			if (arrOfProducts[i] == "Banana Cue") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 100" + "</li>");
+			}
 		}
 	})
 });

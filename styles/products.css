@@ -30,10 +30,29 @@
 
 .cart-cont {
   width: 40%;
+  max-height: 70vh;
   padding: 3rem;
   background: #f4a900;
   border-radius: 1rem;
   border: 2px solid #f43b16;
+}
+
+.contentarea {
+  height: 55vh;
+  overflow-y: scroll;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+}
+
+.contentarea > li {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .cart-cont > .head {

@@ -46,8 +46,9 @@ $(document).ready(e => {
   });
 
   $(others).click(e => {
+    let maps = document.getElementsByClassName("mapouter");
 
-    console.log(e.target.id);
+    console.log(maps);
 
     if (e.target.id === "about") {
       $(title).text("About Us");
