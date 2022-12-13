@@ -28,6 +28,38 @@
   backdrop-filter: blur(3px);
 }
 
+#buttoncontainer {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttoncontainer > button {
+  /* display: none; */
+  display: flex;
+}
+
+#buttoncontainer > h1 {
+  /* display: none; */
+  display: flex;
+}
+
+#loginbtn {
+  padding: 1rem;
+  border: 2px solid #f43b16;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
+#signupbtn {
+  padding: 1rem;
+  background: #f43b16;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
 .cart-cont {
   width: 40%;
   max-height: 70vh;
@@ -89,8 +121,9 @@ body {
   background: #f4a900;
   display: flex;
   padding-left: 5%;
+  padding-right: 5%;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   height: 15vh;
 }
 

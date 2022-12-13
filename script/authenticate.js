@@ -324,8 +324,98 @@ $(document).ready(() => {
 		for (i = 0; i < arrOfProducts.length; i++) {
 			// $(list).append("<li>" + arrOfProducts[i] + "</li>");
 			if (arrOfProducts[i] == "Banana Cue") {
-				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 100" + "</li>");
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 10.00" + "</li>");
+				arrOfProductsPrice.push(10);
+			}
+			else if (arrOfProducts[i] == "Balot") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 20.00" + "</li>");
+				arrOfProductsPrice.push(20);
+			}
+			else if (arrOfProducts[i] == "Barbeque") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 30.00" + "</li>");
+				arrOfProductsPrice.push(30);
+			}
+			else if (arrOfProducts[i] == "Buchi") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 40.00" + "</li>");
+				arrOfProductsPrice.push(5);
+			}
+			else if (arrOfProducts[i] == "Calamares") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 3.00" + "</li>");
+				arrOfProductsPrice.push(3);
+			}
+			else if (arrOfProducts[i] == "Carioca") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 5.00" + "</li>");
+				arrOfProductsPrice.push(5);
+			}
+			else if (arrOfProducts[i] == "Lumpia Shanghai") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 10.00" + "</li>");
+				arrOfProductsPrice.push(7);
+			}
+			else if (arrOfProducts[i] == "Potato Balls") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 25.00" + "</li>");
+				arrOfProductsPrice.push(25);
+			}
+			else if (arrOfProducts[i] == "Sundot") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 50.00" + "</li>");
+				arrOfProductsPrice.push(50);
+			}
+			else if (arrOfProducts[i] == "Siomai") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 12.00" + "</li>");
+				arrOfProductsPrice.push(12);
+			}
+			else if (arrOfProducts[i] == "Taho") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 25.00" + "</li>");
+				arrOfProductsPrice.push(25);
+			}
+			else if (arrOfProducts[i] == "Takoyaki") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 50.00" + "</li>");
+				arrOfProductsPrice.push(50);
+			}
+			else if (arrOfProducts[i] == "Fishball") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 2.00" + "</li>");
+				arrOfProductsPrice.push(2);
+			}
+			else if (arrOfProducts[i] == "Kikyam") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 3.00" + "</li>");
+				arrOfProductsPrice.push(3);
+			}
+			else if (arrOfProducts[i] == "Kwekkwek") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 4.00" + "</li>");
+				arrOfProductsPrice.push(4);
+			}
+			else if (arrOfProducts[i] == "Chicken Skin") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 10.00" + "</li>");
+				arrOfProductsPrice.push(10);
+			}
+			else if (arrOfProducts[i] == "Corn Dog") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 60.00" + "</li>");
+				arrOfProductsPrice.push(60);
+			}
+			else if (arrOfProducts[i] == "Dynamite") {
+				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 15.00" + "</li>");
+				arrOfProductsPrice.push(15);
 			}
 		}
+	});
+
+	const lg_btn = document.getElementById("loginbtn");
+	const su_btn = document.getElementById("signupbtn");
+	const userName = document.getElementsByClassName("user");
+
+	if (sessionStorage.getItem("displayname") != null) {
+		$(userName).css("display", "block");
+		$(userName).text(sessionStorage.getItem("displayname"));
+		$(lg_btn).css("display", "none");
+		$(su_btn).css("display", "none");
+	}
+	else {
+		$(lg_btn, su_btn).css("display", "flex");
+	}
+
+	$(lg_btn).click(() => {
+		window.location.replace("login.html");
+	});
+	$(su_btn).click(() => {
+		window.location.replace("sign-up.html");
 	})
 });
