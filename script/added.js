@@ -12,7 +12,7 @@ $(document).ready(() => {
     $(cartCont).css("display", "flex");
   });
 
-  $(cartCont, closebtn).click(e => {
+  $(closebtn).click(e => {
     $(cartCont).css("display", "none");
   })
 

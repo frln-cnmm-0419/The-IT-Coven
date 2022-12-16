@@ -23,11 +23,90 @@
             <h1 class="close-cart">X</h1>
           </div>
           <div class="contentarea"></div>
+          <div class="controls">
+            <h1>TOTAL: PHP <span class="total">0</span></h1>
+            <button class="checkout-frm">CHECKOUT</button>
+          </div>
+        </div>
+      </div>
+      <div id="checkout-c">
+        <div class="checkout-cont">
+          <div class="head">
+            <h1>CHECKOUT</h1>
+            <h1 style="cursor: pointer" class="close-checkout">X</h1>
+          </div>
+          <div class="contentarea">
+            <div class="checkout-form">
+              <h1>NAME</h1>
+              <input type="text" class="name" />
+              <h1>ADDRESS</h1>
+              <input type="text" class="address" />
+              <h1>CONTACT NUMBER</h1>
+              <input type="text" class="contact" />
+              <h1>EMAIL</h1>
+              <input type="text" class="email" />
+              <div class="paymentMethod">
+                <h1>PAYMENT METHOD</h1>
+                <div class="paymentMethod-options">
+                  <div class="paymentMethod-option">
+                    <img src="../assets/cash.png" alt="" class="cash" />
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      id="cash"
+                      value="cash"
+                    />
+                    <label for="cash">CASH</label>
+                  </div>
+                  <div class="paymentMethod-option">
+                    <img src="../assets/gcash.png" class="gcash" alt="" />
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      id="gcash"
+                      value="gcash"
+                    />
+                    <label for="gcash">GCASH</label>
+                  </div>
+                  <div class="paymentMethod-option">
+                    <img src="../assets/paypal.png" class="paypal" alt="" />
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      id="paypal"
+                      value="paypal"
+                    />
+                    <label for="paypal">PAYPAL</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="controlss">
+            <button class="chck-order-now">SUBMIT</button>
+          </div>
+        </div>
+      </div>
+      <div class="placeorder">
+        <div class="placeorder-cont">
+          <div class="head">
+            <h1>PLACE ORDER</h1>
+            <h1 style="cursor: pointer" class="close-placeorder">X</h1>
+          </div>
+          <div class="contentarea">
+            <div class="reciept">
+              <img src="../assets/Motorcycle.png" alt="" />
+            </div>
+            <div class="placeorderr">
+              Successfully Ordered, Our Rider is on its way.
+            </div>
+            <button class="plc-order">ok</button>
+          </div>
         </div>
       </div>
       <div id="snackbar"></div>
       <div class="heading">
-        <h1>TUHOG-TUSOK</h1>
+        <h1><img src="../assets/logo.png" alt="" /> TUHOG-TUSOK</h1>
         <div id="buttoncontainer">
           <button id="loginbtn">LOGIN</button>
           <button id="signupbtn">SIGNUP</button>
@@ -47,6 +126,9 @@
       </div>
 
       <div class="main-container">
+        <div class="ads">
+          <img src="../assets/Ads.png" alt="" />
+        </div>
         <div id="bananacue" class="products meryenda">
           <img src="../assets/BBNQ.jpg" />
           <h1 class="desc">BANANACUE</h1>

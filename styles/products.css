@@ -28,10 +28,194 @@
   backdrop-filter: blur(3px);
 }
 
+#checkout-c {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  z-index: 80;
+  padding: 2rem;
+  height: 100vh;
+  backdrop-filter: blur(3px);
+  overflow: hidden;
+}
+
+.checkout-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  padding: 2rem;
+  gap: 1rem;
+  width: 60%;
+  height: 90vh;
+  background-color: #f4a900;
+  border: #0a5028 2px solid;
+  border-radius: 1rem;
+}
+
+.checkout-cont > .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.head > h1 {
+  justify-self: center;
+}
+
+.checkout-form > h1 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.checkout-form > h1 {
+  font-size: 1rem;
+}
+
+.checkout-form > input {
+  width: 70%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+  border: 1px solid black;
+}
+
+.paymentMethod-options {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.placeorder {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  backdrop-filter: blur(3px);
+  z-index: 499;
+}
+
+.reciept {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.reciept > img {
+  width: 25%;
+}
+
+.placeorder-cont {
+  display: flex;
+  z-index: 200;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 500;
+  width: 40%;
+  height: 50vh;
+  background-color: #f4a900;
+  border: #0a5028 2px solid;
+  border-radius: 1rem;
+}
+
+.placeorder-cont > .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.contentarea > button {
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #f43b16;
+  background: #0a5028;
+  color: white;
+  font-weight: bold;
+}
+
+.paymentMethod {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.heading > h1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-self: left;
+  width: 25%;
+}
+
+.heading > h1 > img {
+  width: 20%;
+}
+
+.paymentMethod-option {
+  width: 30%;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cash {
+  width: 15%;
+}
+
+.controlss {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.controlss > button {
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #f43b16;
+  background: #0a5028;
+  color: white;
+  font-weight: bold;
+}
+
+.paypal {
+  width: 15%;
+}
+
+.gcash {
+  width: 30%;
+}
+
+.paymentMethod-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
 #buttoncontainer {
   display: flex;
   flex-direction: row;
-  gap: 3px;
+  gap: 5px;
   justify-content: center;
   align-items: center;
 }
@@ -39,6 +223,8 @@
 #buttoncontainer > button {
   /* display: none; */
   display: flex;
+  cursor: pointer;
+  font-weight: 500;
 }
 
 #buttoncontainer > h1 {
@@ -55,24 +241,27 @@
 
 #signupbtn {
   padding: 1rem;
-  background: #f43b16;
+  background: none;
   border-radius: 10px;
   font-size: 0.8rem;
 }
 
 .cart-cont {
   width: 40%;
-  max-height: 70vh;
+  max-height: 80vh;
   padding: 3rem;
   background: #f4a900;
+  display: none;
   border-radius: 1rem;
   border: 2px solid #f43b16;
 }
 
 .contentarea {
   height: 55vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   display: flex;
   flex-direction: column;
   padding-left: 1rem;
@@ -85,11 +274,24 @@
   justify-content: space-evenly;
   align-items: center;
   margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.controls > h1 {
+  font-size: 1rem;
+  margin-right: 1rem;
 }
 
 .cart-cont > .head {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   margin-bottom: 2rem;
 }
@@ -220,13 +422,22 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   height: 85vh;
+  position: relative;
+  padding-right: 9rem;
 }
 
-.main-container > div {
+.ads {
+  width: 10%;
+  position: fixed;
+  right: 0;
+  bottom: 7rem;
+}
+
+.main-container > .products {
   background-color: #c7dbad;
   display: flex;
-  width: 20rem;
-  height: 20rem;
+  width: 19rem;
+  height: 19rem;
   flex-direction: column;
   border: 2px solid #f43b16;
   border-radius: 15px;
@@ -238,7 +449,7 @@ body {
   align-items: center;
 }
 
-.main-container > div:hover {
+.main-container > .products:hover {
   background-color: #f43b16;
 }
 

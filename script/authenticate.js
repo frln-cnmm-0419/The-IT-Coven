@@ -15,6 +15,9 @@ $(document).ready(() => {
 	const paynow = document.getElementsByClassName("pn-btn");
 	var arrOfProducts = [];
 	var arrOfProductsPrice = [];
+	const lg_btn = document.getElementById("loginbtn");
+	const su_btn = document.getElementById("signupbtn");
+	const userName = document.getElementsByClassName("user");
 	// Your web app's Firebase configuration
 	const firebaseConfig = {
 		apiKey: "AIzaSyBfbXNMMl_LRaVqipBtRqGjAalDyyWXfRE",
@@ -318,11 +321,17 @@ $(document).ready(() => {
 		}
 	})
 	var list = document.getElementsByClassName("contentarea");
+	var totalPrice;
+	const cart_cont = document.getElementsByClassName("cart-cont");
 	$(paynow).click(() => {
 		var i;
-		console.log(arrOfProducts);
+		const total = document.getElementsByClassName("total");
+		$(cart_cont).css("display", "block");
+
+		if (arrOfProducts.length == 0) {
+			$(list).append("<h1>" + "Your Cart is Empty..." + "</h1>");
+		}
 		for (i = 0; i < arrOfProducts.length; i++) {
-			// $(list).append("<li>" + arrOfProducts[i] + "</li>");
 			if (arrOfProducts[i] == "Banana Cue") {
 				$(list).append("<li>" + arrOfProducts[i] + "   " + "P 10.00" + "</li>");
 				arrOfProductsPrice.push(10);
@@ -396,11 +405,12 @@ $(document).ready(() => {
 				arrOfProductsPrice.push(15);
 			}
 		}
+		var x;
+		for (x = 0; x < arrOfProductsPrice.length; x++) {
+			totalPrice += arrOfProductsPrice[x];
+			console.log(arrOfProductsPrice[x]);
+		}
 	});
-
-	const lg_btn = document.getElementById("loginbtn");
-	const su_btn = document.getElementById("signupbtn");
-	const userName = document.getElementsByClassName("user");
 
 	if (sessionStorage.getItem("displayname") != null) {
 		$(userName).css("display", "block");
@@ -418,4 +428,19 @@ $(document).ready(() => {
 	$(su_btn).click(() => {
 		window.location.replace("sign-up.html");
 	})
+
+	$(".checkout-frm").click((e) => {
+		$("#checkout-c").css("display", "flex");
+		$("#cart-float").css("display", "none");
+		console.log(e);
+	})
+
+	$(".plc-order").click(() => {
+		$(".placeorder").css("display", "none");
+	})
+	$(".chck-order-now").click(() => {
+		$(".placeorder").css("display", "flex");
+		$("#checkout-c").css("display", "none");
+	})
+
 });
