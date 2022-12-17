@@ -328,7 +328,7 @@ $(document).ready(() => {
 		const total = document.getElementsByClassName("total");
 		$(cart_cont).css("display", "block");
 
-		if (arrOfProducts.length == 0) {
+		if (arrOfProducts.length === 0) {
 			$(list).append("<h1>" + "Your Cart is Empty..." + "</h1>");
 		}
 		for (i = 0; i < arrOfProducts.length; i++) {
